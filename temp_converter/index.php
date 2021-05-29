@@ -26,83 +26,26 @@
             <div class="container-fluid">
                 <div class="row vh-100 justify-content-center">
                     <div class="col-lg-6 align-self-center text-left">
-                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="celcius-tab" data-toggle="tab" href="#celcius" role="tab" aria-controls="celcius" aria-selected="true"><h3 class="font-weight-light">Celcius</h3></a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="fahrenheit-tab" data-toggle="tab" href="#fahrenheit" role="tab" aria-controls="fahrenheit" aria-selected="false"><h3 class="font-weight-light">Fahrenheit</h3></a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="kelvin-tab" data-toggle="tab" href="#kelvin" role="tab" aria-controls="kelvin" aria-selected="false"><h3 class="font-weight-light">Kelvin</h3></a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="rankine-tab" data-toggle="tab" href="#rankine" role="tab" aria-controls="rankine" aria-selected="false"><h3 class="font-weight-light">Rankine</h3></a>
-                            </li>
-                        </ul>
-                        <br>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active pt-1" id="celcius" role="tabpanel" aria-labelledby="celcius-tab">
-                                <form action="" method="POST">
-                                    <div class="form-group">
-                                        <label for="celcius-addon-1">Celcius</label>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text shadow" id="celcius-addon-1">°C</span>
-                                            </div>
-                                            <input type="number" class="form-control shadow" placeholder="Celcius" aria-label="Celcius" aria-describedby="celcius-addon-1" required="required">
-                                            <div class="input-group-append">
-                                                <button type="submit" class="input-group-text btn btn-primary shadow" name="btn_celcius_convert" aria-describedby="celcius-addon-1">HITUNG</button>  
-                                            </div>
-                                        </div>
-                                    </div>
+                                                <br>
+                        <div class="row">
+                            <div class="col">
+                                <table class="table table-striped text-left">
+                                    <thead class="bg-dark text-light">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Fahrenheit</th>
+                                            <th scope="col">Reamur</th>
+                                        </tr>
+                                    </thead>
                                     
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label for="fahrenheit-addon-1">Fahrenheit</label>
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text shadow" id="fahrenheit-addon-1">°F</span>
-                                                    </div>
-                                                    <input type="number" class="form-control shadow disabled" placeholder="Fahrenheit" aria-label="Fahrenheit" aria-describedby="fahrenheit-addon-1" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label for="kelvin-addon-1">Kelvin</label>
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text shadow" id="kelvin-addon-1">°K</span>
-                                                    </div>
-                                                    <input type="number" class="form-control shadow disabled" placeholder="Kelvin" aria-label="Kelvin" aria-describedby="kelvin-addon-1" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label for="rankine-addon-1">Rankine</label>
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text shadow" id="rankine-addon-1">°R</span>
-                                                    </div>
-                                                    <input type="number" class="form-control shadow disabled" placeholder="Rankine" aria-label="Rankine" aria-describedby="rankine-addon-1" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <Br>
-                                    <div class="row">
-                                        <div class="col-lg">
-                                            <button type="reset" class="btn btn-lg btn-info shadow rounded d-block text-right">RESET</button>  
-                                        </div>  
-                                    </div>
-                                </form>
-                            </div>
+                                    <tbody>
+                                        <?php
+                                            $objTableViewtemp->tableViewTemp();
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>  
                         </div>
-                        
-                        <!-- Fahrenheit -->
                         
                     </div>
                 </div>
