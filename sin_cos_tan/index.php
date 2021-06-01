@@ -52,9 +52,9 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text shadow" id="talls-l-addon-1">T</span>
                                             </div>
-                                            <input type="number" class="form-control shadow" placeholder="Angka dalam Meter" aria-label="talls" aria-describedby="talls-addon-1" name="input_talls" required="required" value="<?php if(isset($_GET['talls'])){echo $_GET['talls'];}else {echo "0";}?>">
+                                            <input type="number" class="form-control shadow" placeholder="Angka dalam CentiMeter" aria-label="talls" aria-describedby="talls-addon-1" name="input_talls" required="required" value="<?php if(isset($_GET['talls'])){echo $_GET['talls'];}else {echo "0";}?>">
                                             <div class="input-group-append">
-                                                <span class="input-group-text shadow" id="talls-l-addon-1">m</span>
+                                                <span class="input-group-text shadow" id="talls-l-addon-1">cm</span>
                                             </div>
                                         </div>
                                     </div>
@@ -66,9 +66,9 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text shadow" id="distance-l-addon-1">D</span>
                                             </div>
-                                            <input type="number" class="form-control shadow" placeholder="Angka dalam Meter" aria-label="distance" aria-describedby="distance-addon-1" name="input_distance" required="required" value="<?php if(isset($_GET['distance'])){echo $_GET['distance'];}else {echo "0";}?>">
+                                            <input type="number" class="form-control shadow" placeholder="Angka dalam CentiMeter" aria-label="distance" aria-describedby="distance-addon-1" name="input_distance" required="required" value="<?php if(isset($_GET['distance'])){echo $_GET['distance'];}else {echo "0";}?>">
                                             <div class="input-group-append">
-                                                <span class="input-group-text shadow" id="distance-l-addon-1">m</span>
+                                                <span class="input-group-text shadow" id="distance-l-addon-1">cm</span>
                                             </div>
                                         </div>
                                     </div>
@@ -100,7 +100,10 @@
                                     echo $_GET['data_tree'];
                                     }
                                     else {
-                                        echo "0";
+                                        echo "";
+                                        $degree = 60;
+                                        $radian = $degree * (M_PI/180);
+                                        echo tan($radian);
                                     }
                                 ?> m</sup>
                                 </h4> 

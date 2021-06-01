@@ -168,30 +168,63 @@
         function __construct() {
         
         }
-        // Set Data Trigonometry
-        public function setDataTrigonometry($InternodeTube, $HeightTube) {
-            $this->formulaCos = (2 * ((3.14 * $InternodeTube) * ($InternodeTube + $HeightTube)));
+        // Set Data Radian
+        public function setDataRadian($Degrees) {
+            $this->formulaRadian = $Degrees * (M_PI/180);
+            return $this->formulaRadian;
+        }
+        // Get Data Radian
+        public function getDataRadian() {
+            return $this->formulaRadian;
+        }
+        
+        // Set Data Sin
+        public function setDataSin($Radian) {
+            $this->formulaSin = sin($Radian);
+            return $this->formulaSin;
+        }
+        // Get Data Sin
+        public function getDataSin() {
+            return $this->formulaSin;
+        }
+        
+        // Set Data Cos
+        public function setDataCos($Radian) {
+            $this->formulaCos = cos($Radian);
             return $this->formulaCos;
         }
-        // Get Data Trigonometry
-        public function getDataTrigonometry() {
+        // Get Data Cos
+        public function getDataCos() {
             return $this->formulaCos;
+        }
+        
+        // Set Data Tan
+        public function setDataTan($Radian) {
+            $this->formulaTan = tan($Radian);
+            return $this->formulaTan;
+        }
+        // Get Data Tan
+        public function getDataTan() {
+            return $this->formulaTan;
         }
     }
 
     $objDataTrigonometry = new viewTrigonometry();   
     
     if( isset($_POST['submit_height_tree'])) {
-        $SideCone = $_POST["input_side_cone"];
-        $InternodeCone = $_POST["input_internode_cone"];
+        $inputDegrees = $_POST["input_degrees"];
+        $inputTalls = $_POST["input_talls"];
+        $inputDistance = $_POST["input_distance"];
         
-        $objViewLargeDimensional->setDataConeLargeBase($InternodeCone);
-        $objViewLargeDimensional->setDataConeLargeSide($InternodeCone,$SideCone);
-        $objViewLargeDimensional->setDataConeLargeSurface($InternodeCone,$SideCone);
-        //$objViewLargeDimensional->setDataCone($objViewLargeDimensional->getDataConeBase(),$objViewLargeDimensional->getDataConeSide());
-        //&data_cone=".$objViewLargeDimensional->getDataCone()." (URL)
-        header("Location: ../dimensional_shape/index.php?cone-tab=active&cone-panel=show&side_cone=".$SideCone."&internode_cone=".$InternodeCone."&data_base_cone=".$objViewLargeDimensional->getDataConeBase()."&data_side_cone=".$objViewLargeDimensional->getDataConeSide()."&data_surface_cone=".$objViewLargeDimensional->getDataConeSurface()."");
-
+        $dataFinal = $objDataTrigonometry->getDataTan() / $inputDistance;
+        
+        $objDataTrigonometry->setDataRadian($inputDegrees);
+        $objDataTrigonometry->setDataSin($objDataTrigonometry->getDataRadian());
+        $objDataTrigonometry->setDataCos($objDataTrigonometry->getDataRadian());
+        $objDataTrigonometry->setDataTan($objDataTrigonometry->getDataRadian());
+        
+        header("Location: ../sin_cos_tan/index.php?data_final=".$dataFinal."&data_radian=".$objDataTrigonometry->getDataRadian()."&data_sin=".$objDataTrigonometry->getDataSin()."&data_cos=".$objDataTrigonometry->getDataCos()."&data_tan=".$objDataTrigonometry->getDataTan()."&data_degress=".$inputDegrees."&data_talls=".$inputTalls."&data_distance=".$inputDistance."");
+        
     }
     
     // Checkout Forms
