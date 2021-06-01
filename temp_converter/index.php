@@ -26,7 +26,7 @@
             <div class="container-fluid">
                 <div class="row vh-100 justify-content-center">
                     <div class="col-lg-6 align-self-center text-left">
-                                                <br>
+                        <br>
                         <div class="row">
                             <div class="col">
                                 <table class="table table-striped text-left">
@@ -46,9 +46,14 @@
                                 </table>
                             </div>  
                         </div>
-                        
+                        <div class="row mb-5">
+                            <div class="col">
+                                <a href="../" class="btn btn-lg btn-info shadow rounded d-block">HOME</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
             </div>
                     
     
