@@ -38,7 +38,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text shadow" id="degrees-w-addon-1">Deg</span>
                                             </div>
-                                            <input type="number" class="form-control shadow" placeholder="Angka dalam Derajat" aria-label="degrees" aria-describedby="degrees-addon-1" name="input_degrees" required="required" value="<?php if(isset($_GET['degrees'])){echo $_GET['degrees'];}else {echo "0";}?>">
+                                            <input type="number" class="form-control shadow" placeholder="Angka dalam Derajat" aria-label="degrees" aria-describedby="degrees-addon-1" name="input_degrees" required="required" value="<?php if(isset($_GET['data_degrees'])){echo $_GET['data_degrees'];}else {echo "0";}?>">
                                             <div class="input-group-append">
                                                 <span class="input-group-text shadow" id="degrees-w-addon-1">°</span>
                                             </div>
@@ -52,9 +52,9 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text shadow" id="talls-l-addon-1">T</span>
                                             </div>
-                                            <input type="number" class="form-control shadow" placeholder="Angka dalam CentiMeter" aria-label="talls" aria-describedby="talls-addon-1" name="input_talls" required="required" value="<?php if(isset($_GET['talls'])){echo $_GET['talls'];}else {echo "0";}?>">
+                                            <input type="number" class="form-control shadow" placeholder="Angka dalam CentiMeter" aria-label="talls" aria-describedby="talls-addon-1" name="input_talls" required="required" value="<?php if(isset($_GET['data_talls'])){echo $_GET['data_talls'];}else {echo "0";}?>">
                                             <div class="input-group-append">
-                                                <span class="input-group-text shadow" id="talls-l-addon-1">cm</span>
+                                                <span class="input-group-text shadow" id="talls-l-addon-1">m</span>
                                             </div>
                                         </div>
                                     </div>
@@ -66,9 +66,9 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text shadow" id="distance-l-addon-1">D</span>
                                             </div>
-                                            <input type="number" class="form-control shadow" placeholder="Angka dalam CentiMeter" aria-label="distance" aria-describedby="distance-addon-1" name="input_distance" required="required" value="<?php if(isset($_GET['distance'])){echo $_GET['distance'];}else {echo "0";}?>">
+                                            <input type="number" class="form-control shadow" placeholder="Angka dalam CentiMeter" aria-label="distance" aria-describedby="distance-addon-1" name="input_distance" required="required" value="<?php if(isset($_GET['data_distance'])){echo $_GET['data_distance'];}else {echo "0";}?>">
                                             <div class="input-group-append">
-                                                <span class="input-group-text shadow" id="distance-l-addon-1">cm</span>
+                                                <span class="input-group-text shadow" id="distance-l-addon-1">m</span>
                                             </div>
                                         </div>
                                     </div>
@@ -78,14 +78,14 @@
                             <div class="row text-center">
                                 <div class="col-lg text-center">
                                     <div class="form-group text-center">
-                                        <button type="reset" class="text-center btn btn-danger shadow rounded d-block">RESET</button> 
+                                        <button type="reset" class="text-center btn btn-danger shadow rounded d-block btn-block">RESET</button> 
                                     </div>
                                 </div>
                             </div>
                             <div class="row text-center">
                                 <div class="col-lg text-center">
                                     <div class="form-group text-center">
-                                        <button type="submit" class="text-center btn btn-primary shadow rounded d-block" name="submit_height_tree">HITUNG</button>  
+                                        <button type="submit" class="text-center btn btn-primary shadow rounded d-block btn-block" name="submit_height_tree">HITUNG</button>  
                                     </div>
                                 </div>
                             </div>
@@ -96,14 +96,11 @@
                             <div class="col">
                                 <h3>HASIL TINGGI POHON: </h3>
                                 <h4>
-                                <?php if(isset($_GET['data_tree'])) {
-                                    echo $_GET['data_tree'];
+                                <?php if(isset($_GET['data_final'])) {
+                                    echo $_GET['data_final'];
                                     }
                                     else {
-                                        echo "";
-                                        $degree = 60;
-                                        $radian = $degree * (M_PI/180);
-                                        echo tan($radian);
+                                        echo "0";
                                     }
                                 ?> m</sup>
                                 </h4> 
@@ -123,7 +120,7 @@
         <!-- Optional JavaScript; choose one of the two! -->
     
         <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-        <script src="../assets/vendor/jquery/jquery-3.6.0.slim.min.js"></script>
+        <script src="../assets/vendor/jquery/jquery-3.6.0.min.js"></script>
         <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         
         <!-- Library -->

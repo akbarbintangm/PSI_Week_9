@@ -1,9 +1,6 @@
 <?php
     // Temperature
     class viewDataTemperature {
-        function __construct() {
-        
-        }
         // Convert Data
         public function tableViewTemp() {
             $nomer = 0;
@@ -165,9 +162,6 @@
     
     // Sin Cos Tan
     class viewTrigonometry {
-        function __construct() {
-        
-        }
         // Set Data Radian
         public function setDataRadian($Degrees) {
             $this->formulaRadian = $Degrees * (M_PI/180);
@@ -216,14 +210,15 @@
         $inputTalls = $_POST["input_talls"];
         $inputDistance = $_POST["input_distance"];
         
-        $dataFinal = $objDataTrigonometry->getDataTan() / $inputDistance;
-        
         $objDataTrigonometry->setDataRadian($inputDegrees);
         $objDataTrigonometry->setDataSin($objDataTrigonometry->getDataRadian());
         $objDataTrigonometry->setDataCos($objDataTrigonometry->getDataRadian());
         $objDataTrigonometry->setDataTan($objDataTrigonometry->getDataRadian());
         
-        header("Location: ../sin_cos_tan/index.php?data_final=".$dataFinal."&data_radian=".$objDataTrigonometry->getDataRadian()."&data_sin=".$objDataTrigonometry->getDataSin()."&data_cos=".$objDataTrigonometry->getDataCos()."&data_tan=".$objDataTrigonometry->getDataTan()."&data_degress=".$inputDegrees."&data_talls=".$inputTalls."&data_distance=".$inputDistance."");
+        $tanx = $objDataTrigonometry->getDataTan();
+        $dataFinal = $inputDistance / $tanx;
+        
+        header("Location: ../sin_cos_tan/index.php?data_final=".$dataFinal."&data_radian=".$objDataTrigonometry->getDataRadian()."&data_sin=".$objDataTrigonometry->getDataSin()."&data_cos=".$objDataTrigonometry->getDataCos()."&data_tan=".$objDataTrigonometry->getDataTan()."&data_degrees=".$inputDegrees."&data_talls=".$inputTalls."&data_distance=".$inputDistance."");
         
     }
     
@@ -232,11 +227,153 @@
         function __construct() {
         
         }
-        // Fetch & Output Data
-        public function fetchDataForms() {
-            
+        
+        // Fetch Data setFirstName
+        public function setFirstName ($firstName) {
+            $this->firstName = $firstName;
         }
+        // Fetch Data setSecondName
+        public function setSecondName ($secondName) {
+            $this->secondName = $secondName;
+        }
+        // Fetch Data setUserName
+        public function setUserName ($UserName) {
+            $this->UserName = $UserName;
+        }
+        // Fetch Data setPhoneNumber
+        public function setPhoneNumber ($PhoneNumber) {
+            $this->PhoneNumber = $PhoneNumber;
+        }
+        // Fetch Data setEmailUser
+        public function setEmailUser ($emailUser) {
+            $this->emailUser = $emailUser;
+        }
+        // Fetch Data setPasswordUser
+        public function setPasswordUser ($passwordUser) {
+            $this->passwordUser = $passwordUser;
+        }
+        // Fetch Data setAddressUser
+        public function setAddressUser ($addressUser) {
+            $this->addressUser = $addressUser;
+        }
+        // Fetch Data setRekeningInputChoice
+        public function setRekeningInputChoice ($rekeningInputChoice) {
+            $this->rekeningInputChoice = $rekeningInputChoice;
+        }
+        // Fetch Data setRekeningUser
+        public function setRekeningUser ($rekeningUser) {
+            $this->rekeningUser = $rekeningUser;
+        }
+        // Fetch Data setInputGoodsChoice
+        public function setInputGoodsChoice ($inputGoodsChoice) {
+            $this->inputGoodsChoice = $inputGoodsChoice;
+        }
+        // Fetch Data setKurirInputChoice
+        public function setKurirInputChoice ($kurirInputChoice) {
+            $this->kurirInputChoice = $kurirInputChoice;
+        }
+        // Fetch Data setExtraInputChoice1
+        public function setExtraInputChoice1 ($extraInputChoice1) {
+            $this->extraInputChoice1 = $extraInputChoice1;
+        }
+        
+        // Get Data from setFirstName
+        public function getFirstName ($firstName) {
+            return $this->firstName;
+        }
+        // Get Data from setSecondName
+        public function getSecondName ($secondName) {
+            return $this->secondName;
+        }
+        // Get Data from setUserName
+        public function getUserName ($UserName) {
+            return $this->UserName;
+        }
+        // Get Data from setPhoneNumber
+        public function getPhoneNumber ($PhoneNumber) {
+            return $this->PhoneNumber;
+        }
+        // Get Data from setEmailUser
+        public function getEmailUser ($emailUser) {
+            return $this->emailUser;
+        }
+        // Get Data from setPasswordUser
+        public function getPasswordUser ($passwordUser) {
+            return $this->passwordUser;
+        }
+        // Get Data from setAddressUser
+        public function getAddressUser ($addressUser) {
+            return $this->addressUser;
+        }
+        // Get Data from setRekeningInputChoice
+        public function getRekeningInputChoice ($rekeningInputChoice) {
+            return $this->rekeningInputChoice;
+        }
+        // Get Data from setRekeningUser
+        public function getRekeningUser ($rekeningUser) {
+            return $this->rekeningUser;
+        }
+        // Get Data from setInputGoodsChoice
+        public function getInputGoodsChoice ($inputGoodsChoice) {
+            return $this->inputGoodsChoice;
+        }
+        // Get Data from setKurirInputChoice
+        public function getKurirInputChoice ($kurirInputChoice) {
+            return $this->kurirInputChoice;
+        }
+        // Get Data from setExtraInputChoice1
+        public function getExtraInputChoice1 ($extraInputChoice1) {
+            return $this->extraInputChoice1;
+        }
+        
     }
 
     $objFetchDataForms = new formsCheckout();   
+    
+    if( isset($_POST['submit_all'])) {
+        // Variables
+        $firstName = $_POST["firstName"];
+        $secondName = $_POST["secondName"];
+        $UserName = $_POST["UserName"];
+        $PhoneNumber = $_POST["PhoneNumber"];
+        $emailUser = $_POST["emailUser"];
+        $passwordUser = $_POST["passwordUser"];
+        $addressUser = $_POST["addressUser"];
+        $rekeningInputChoice = $_POST["rekeningInputChoice"];
+        $rekeningUser = $_POST["rekeningUser"];
+        $inputGoodsChoice = $_POST["inputGoodsChoice"];
+        $kurirInputChoice = $_POST["kurirInputChoice"];
+        $extraInputChoice1 = $_POST["extraInputChoice1"];
+
+        // Input Data
+        $objFetchDataForms->setFirstName($firstName);
+        $objFetchDataForms->setSecondName($secondName);
+        $objFetchDataForms->setUserName($UserName);
+        $objFetchDataForms->setPhoneNumber($PhoneNumber);
+        $objFetchDataForms->setEmailUser($emailUser);
+        $objFetchDataForms->setPasswordUser($passwordUser);
+        $objFetchDataForms->setAddressUser($addressUser);
+        $objFetchDataForms->setRekeningInputChoice($rekeningInputChoice);
+        $objFetchDataForms->setRekeningUser($rekeningUser);
+        $objFetchDataForms->setInputGoodsChoice($inputGoodsChoice);
+        $objFetchDataForms->setKurirInputChoice($kurirInputChoice);
+        $objFetchDataForms->setExtraInputChoice1($extraInputChoice1);
+                
+        // Get Data
+        $objFetchDataForms->getFirstName();
+        $objFetchDataForms->getSecondName();
+        $objFetchDataForms->getUserName();
+        $objFetchDataForms->getPhoneNumber();
+        $objFetchDataForms->getEmailUser();
+        $objFetchDataForms->getPasswordUser();
+        $objFetchDataForms->getAddressUser();
+        $objFetchDataForms->getRekeningInputChoice();
+        $objFetchDataForms->getRekeningUser();
+        $objFetchDataForms->getInputGoodsChoice();
+        $objFetchDataForms->getKurirInputChoice();
+        $objFetchDataForms->getExtraInputChoice1();
+        
+        header("Location: ../sin_cos_tan/index.php?data_final=".$dataFinal."&data_radian=".$objDataTrigonometry->getDataRadian()."&data_sin=".$objDataTrigonometry->getDataSin()."&data_cos=".$objDataTrigonometry->getDataCos()."&data_tan=".$objDataTrigonometry->getDataTan()."&data_degrees=".$inputDegrees."&data_talls=".$inputTalls."&data_distance=".$inputDistance."");
+        
+    }
 ?>

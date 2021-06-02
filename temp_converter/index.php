@@ -48,7 +48,7 @@
                         </div>
                         <div class="row mb-5">
                             <div class="col">
-                                <a href="../" class="btn btn-lg btn-info shadow rounded d-block">HOME</a>
+                                <a href="../" class="btn btn-lg btn-info shadow rounded btn-block d-block">HOME</a>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
         <!-- Optional JavaScript; choose one of the two! -->
     
         <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-        <script src="../assets/vendor/jquery/jquery-3.6.0.slim.min.js"></script>
+        <script src="../assets/vendor/jquery/jquery-3.6.0.min.js"></script>
         <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         
         <!-- Library -->

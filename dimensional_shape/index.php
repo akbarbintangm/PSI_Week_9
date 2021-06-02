@@ -95,14 +95,14 @@
                                     <div class="row text-center">
                                         <div class="col-lg text-center">
                                             <div class="form-group text-center">
-                                                <button type="reset" class="text-center btn btn-danger shadow rounded d-block">RESET</button> 
+                                                <button type="reset" class="text-center btn btn-danger shadow rounded d-block btn-block">RESET</button> 
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row text-center">
                                         <div class="col-lg text-center">
                                             <div class="form-group text-center">
-                                                <button type="submit" class="text-center btn btn-primary shadow rounded d-block" name="submit_blockbar_large">HITUNG</button>  
+                                                <button type="submit" class="text-center btn btn-primary shadow rounded d-block btn-block" name="submit_blockbar_large">HITUNG</button>  
                                             </div>
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@
                                 <br>
                                 <div class="row mb-5">
                                     <div class="col">
-                                        <a href="../" class="btn btn-lg btn-info shadow rounded d-block">HOME</a>
+                                        <a href="../" class="btn btn-lg btn-info shadow rounded d-block btn-block">HOME</a>
                                     </div>
                                 </div>
                             </div>
@@ -153,14 +153,14 @@
                                     <div class="row text-center">
                                         <div class="col-lg text-center">
                                             <div class="form-group text-center">
-                                                <button type="reset" class="text-center btn btn-danger shadow rounded d-block">RESET</button> 
+                                                <button type="reset" class="text-center btn btn-danger shadow rounded d-block btn-block">RESET</button> 
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row text-center">
                                         <div class="col-lg text-center">
                                             <div class="form-group text-center">
-                                                <button type="submit" class="text-center btn btn-primary shadow rounded d-block" name="submit_cubic_large">HITUNG</button>  
+                                                <button type="submit" class="text-center btn btn-primary shadow rounded d-block btn-block" name="submit_cubic_large">HITUNG</button>  
                                             </div>
                                         </div>
                                     </div>
@@ -185,7 +185,7 @@
                                 <br>
                                 <div class="row mb-5">
                                     <div class="col">
-                                        <a href="../" class="btn btn-lg btn-info shadow rounded d-block">HOME</a>
+                                        <a href="../" class="btn btn-lg btn-info shadow rounded d-block btn-block">HOME</a>
                                     </div>
                                 </div>
                             </div>
@@ -226,14 +226,14 @@
                                     <div class="row text-center">
                                         <div class="col-lg text-center">
                                             <div class="form-group text-center">
-                                                <button type="reset" class="text-center btn btn-danger shadow rounded d-block">RESET</button> 
+                                                <button type="reset" class="text-center btn btn-danger shadow rounded d-block btn-block">RESET</button> 
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row text-center">
                                         <div class="col-lg text-center">
                                             <div class="form-group text-center">
-                                                <button type="submit" class="text-center btn btn-primary shadow rounded d-block" name="submit_tube_large">HITUNG</button>  
+                                                <button type="submit" class="text-center btn btn-primary shadow rounded d-block btn-block" name="submit_tube_large">HITUNG</button>  
                                             </div>
                                         </div>
                                     </div>
@@ -282,7 +282,7 @@
                                 <br>
                                 <div class="row mb-5">
                                     <div class="col">
-                                        <a href="../" class="btn btn-lg btn-info shadow rounded d-block">HOME</a>
+                                        <a href="../" class="btn btn-lg btn-info shadow rounded d-block btn-block">HOME</a>
                                     </div>
                                 </div>
                             </div>
@@ -323,14 +323,14 @@
                                     <div class="row text-center">
                                         <div class="col-lg text-center">
                                             <div class="form-group text-center">
-                                                <button type="reset" class="text-center btn btn-danger shadow rounded d-block">RESET</button> 
+                                                <button type="reset" class="text-center btn btn-danger shadow rounded d-block btn-block">RESET</button> 
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row text-center">
                                         <div class="col-lg text-center">
                                             <div class="form-group text-center">
-                                                <button type="submit" class="text-center btn btn-primary shadow rounded d-block" name="submit_cone_large">HITUNG</button>  
+                                                <button type="submit" class="text-center btn btn-primary shadow rounded d-block btn-block" name="submit_cone_large">HITUNG</button>  
                                             </div>
                                         </div>
                                     </div>
@@ -391,7 +391,7 @@
                                 <br>
                                 <div class="row mb-5">
                                     <div class="col">
-                                        <a href="../" class="btn btn-lg btn-info shadow rounded d-block">HOME</a>
+                                        <a href="../" class="btn btn-lg btn-info shadow rounded d-block btn-block">HOME</a>
                                     </div>
                                 </div>
                             </div>
@@ -404,7 +404,7 @@
         <!-- Optional JavaScript; choose one of the two! -->
     
         <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-        <script src="../assets/vendor/jquery/jquery-3.6.0.slim.min.js"></script>
+        <script src="../assets/vendor/jquery/jquery-3.6.0.min.js"></script>
         <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         
         <!-- Library -->
