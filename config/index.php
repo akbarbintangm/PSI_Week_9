@@ -385,7 +385,7 @@
         $objFetchDataForms->getKurirInputChoice();
         $objFetchDataForms->getExtraInputChoice1(); */
         
-        header("Location: ../checkout_sample/index.php?display_forms=d-none&display_print=d-block&&firstName=".$objFetchDataForms->getFirstName()."&secondName=".$objFetchDataForms->getSecondName()."&UserName=".$objFetchDataForms->getUserName()."&PhoneNumber=".$objFetchDataForms->getPhoneNumber()."&emailUser=".$objFetchDataForms->getEmailUser()."&passwordUser=".$objFetchDataForms->getPasswordUser()."&addressUser=".$objFetchDataForms->getAddressUser()."&rekeningInputChoice=".$objFetchDataForms->getRekeningInputChoice()."&rekeningUser=".$objFetchDataForms->getRekeningUser()."&inputGoodsChoice=".$objFetchDataForms->getInputGoodsChoice()."&kurirInputChoice=".$objFetchDataForms->getKurirInputChoice()."&extraInputChoice=".$objFetchDataForms->getExtraInputChoice()."
+        header("Location: ../checkout_sample/index.php?display_forms=d-none&display_print=d-block&firstName=".$objFetchDataForms->getFirstName()."&secondName=".$objFetchDataForms->getSecondName()."&userName=".$objFetchDataForms->getUserName()."&phoneNumber=".$objFetchDataForms->getPhoneNumber()."&emailUser=".$objFetchDataForms->getEmailUser()."&passwordUser=".$objFetchDataForms->getPasswordUser()."&addressUser=".$objFetchDataForms->getAddressUser()."&rekeningInputChoice=".$objFetchDataForms->getRekeningInputChoice()."&rekeningUser=".$objFetchDataForms->getRekeningUser()."&inputGoodsChoice=".$objFetchDataForms->getInputGoodsChoice()."&kurirInputChoice=".$objFetchDataForms->getKurirInputChoice()."&extraInputChoice=".$objFetchDataForms->getExtraInputChoice()."
         ");
         
     }
