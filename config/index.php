@@ -229,101 +229,101 @@
         }
         
         // Fetch Data setFirstName
-        public function setFirstName ($firstName) {
+        public function setFirstName($firstName) {
             $this->firstName = $firstName;
         }
         // Fetch Data setSecondName
-        public function setSecondName ($secondName) {
+        public function setSecondName($secondName) {
             $this->secondName = $secondName;
         }
         // Fetch Data setUserName
-        public function setUserName ($UserName) {
-            $this->UserName = $UserName;
+        public function setUserName($userName) {
+            $this->userName = $userName;
         }
         // Fetch Data setPhoneNumber
-        public function setPhoneNumber ($PhoneNumber) {
-            $this->PhoneNumber = $PhoneNumber;
+        public function setPhoneNumber($phoneNumber) {
+            $this->phoneNumber = $phoneNumber;
         }
         // Fetch Data setEmailUser
-        public function setEmailUser ($emailUser) {
+        public function setEmailUser($emailUser) {
             $this->emailUser = $emailUser;
         }
         // Fetch Data setPasswordUser
-        public function setPasswordUser ($passwordUser) {
+        public function setPasswordUser($passwordUser) {
             $this->passwordUser = $passwordUser;
         }
         // Fetch Data setAddressUser
-        public function setAddressUser ($addressUser) {
+        public function setAddressUser($addressUser) {
             $this->addressUser = $addressUser;
         }
         // Fetch Data setRekeningInputChoice
-        public function setRekeningInputChoice ($rekeningInputChoice) {
+        public function setRekeningInputChoice($rekeningInputChoice) {
             $this->rekeningInputChoice = $rekeningInputChoice;
         }
         // Fetch Data setRekeningUser
-        public function setRekeningUser ($rekeningUser) {
+        public function setRekeningUser($rekeningUser) {
             $this->rekeningUser = $rekeningUser;
         }
         // Fetch Data setInputGoodsChoice
-        public function setInputGoodsChoice ($inputGoodsChoice) {
+        public function setInputGoodsChoice($inputGoodsChoice) {
             $this->inputGoodsChoice = $inputGoodsChoice;
         }
         // Fetch Data setKurirInputChoice
-        public function setKurirInputChoice ($kurirInputChoice) {
+        public function setKurirInputChoice($kurirInputChoice) {
             $this->kurirInputChoice = $kurirInputChoice;
         }
-        // Fetch Data setExtraInputChoice1
-        public function setExtraInputChoice1 ($extraInputChoice1) {
-            $this->extraInputChoice1 = $extraInputChoice1;
+        // Fetch Data setExtraInputChoice
+        public function setExtraInputChoice($extraInputChoice) {
+            $this->extraInputChoice = $extraInputChoice;
         }
         
         // Get Data from setFirstName
-        public function getFirstName ($firstName) {
+        public function getFirstName() {
             return $this->firstName;
         }
         // Get Data from setSecondName
-        public function getSecondName ($secondName) {
+        public function getSecondName() {
             return $this->secondName;
         }
         // Get Data from setUserName
-        public function getUserName ($UserName) {
-            return $this->UserName;
+        public function getUserName() {
+            return $this->userName;
         }
         // Get Data from setPhoneNumber
-        public function getPhoneNumber ($PhoneNumber) {
-            return $this->PhoneNumber;
+        public function getPhoneNumber() {
+            return $this->phoneNumber;
         }
         // Get Data from setEmailUser
-        public function getEmailUser ($emailUser) {
+        public function getEmailUser() {
             return $this->emailUser;
         }
         // Get Data from setPasswordUser
-        public function getPasswordUser ($passwordUser) {
+        public function getPasswordUser() {
             return $this->passwordUser;
         }
         // Get Data from setAddressUser
-        public function getAddressUser ($addressUser) {
+        public function getAddressUser() {
             return $this->addressUser;
         }
         // Get Data from setRekeningInputChoice
-        public function getRekeningInputChoice ($rekeningInputChoice) {
+        public function getRekeningInputChoice() {
             return $this->rekeningInputChoice;
         }
         // Get Data from setRekeningUser
-        public function getRekeningUser ($rekeningUser) {
+        public function getRekeningUser() {
             return $this->rekeningUser;
         }
         // Get Data from setInputGoodsChoice
-        public function getInputGoodsChoice ($inputGoodsChoice) {
+        public function getInputGoodsChoice() {
             return $this->inputGoodsChoice;
         }
         // Get Data from setKurirInputChoice
-        public function getKurirInputChoice ($kurirInputChoice) {
+        public function getKurirInputChoice() {
             return $this->kurirInputChoice;
         }
-        // Get Data from setExtraInputChoice1
-        public function getExtraInputChoice1 ($extraInputChoice1) {
-            return $this->extraInputChoice1;
+        // Get Data from setExtraInputChoice
+        public function getExtraInputChoice() {
+            return $this->extraInputChoice;
         }
         
     }
@@ -334,8 +334,8 @@
         // Variables
         $firstName = $_POST["firstName"];
         $secondName = $_POST["secondName"];
-        $UserName = $_POST["UserName"];
-        $PhoneNumber = $_POST["PhoneNumber"];
+        $userName = $_POST["userName"];
+        $phoneNumber = $_POST["phoneNumber"];
         $emailUser = $_POST["emailUser"];
         $passwordUser = $_POST["passwordUser"];
         $addressUser = $_POST["addressUser"];
@@ -343,23 +343,35 @@
         $rekeningUser = $_POST["rekeningUser"];
         $inputGoodsChoice = $_POST["inputGoodsChoice"];
         $kurirInputChoice = $_POST["kurirInputChoice"];
-        $extraInputChoice1 = $_POST["extraInputChoice1"];
-
+        $extraInputChoice = $_POST["extraInputChoice"];
+        
+        // Logic
+        foreach($extraInputChoice as $checkboxExtraInputChoice){
+            $extraMultiCheckbox .= $checkboxExtraInputChoice . ', ';
+        }
+        $extraMultiCheckbox = substr($extraMultiCheckbox, 0, -2);
+        
+        // Logic 2
+        foreach($inputGoodsChoice as $checkboxInputGoodsChoice){
+            $goodsMultiCheckbox .= $checkboxInputGoodsChoice . ', ';
+        }
+        $goodsMultiCheckbox = substr($goodsMultiCheckbox, 0, -2);
+        
         // Input Data
         $objFetchDataForms->setFirstName($firstName);
         $objFetchDataForms->setSecondName($secondName);
-        $objFetchDataForms->setUserName($UserName);
-        $objFetchDataForms->setPhoneNumber($PhoneNumber);
+        $objFetchDataForms->setUserName($userName);
+        $objFetchDataForms->setPhoneNumber($phoneNumber);
         $objFetchDataForms->setEmailUser($emailUser);
         $objFetchDataForms->setPasswordUser($passwordUser);
         $objFetchDataForms->setAddressUser($addressUser);
         $objFetchDataForms->setRekeningInputChoice($rekeningInputChoice);
         $objFetchDataForms->setRekeningUser($rekeningUser);
-        $objFetchDataForms->setInputGoodsChoice($inputGoodsChoice);
+        $objFetchDataForms->setInputGoodsChoice($goodsMultiCheckbox);
         $objFetchDataForms->setKurirInputChoice($kurirInputChoice);
-        $objFetchDataForms->setExtraInputChoice1($extraInputChoice1);
-                
-        // Get Data
+        $objFetchDataForms->setExtraInputChoice($extraMultiCheckbox);
+        
+        /* Get Data
         $objFetchDataForms->getFirstName();
         $objFetchDataForms->getSecondName();
         $objFetchDataForms->getUserName();
@@ -371,9 +383,10 @@
         $objFetchDataForms->getRekeningUser();
         $objFetchDataForms->getInputGoodsChoice();
         $objFetchDataForms->getKurirInputChoice();
-        $objFetchDataForms->getExtraInputChoice1();
+        $objFetchDataForms->getExtraInputChoice1(); */
         
-        header("Location: ../sin_cos_tan/index.php?data_final=".$dataFinal."&data_radian=".$objDataTrigonometry->getDataRadian()."&data_sin=".$objDataTrigonometry->getDataSin()."&data_cos=".$objDataTrigonometry->getDataCos()."&data_tan=".$objDataTrigonometry->getDataTan()."&data_degrees=".$inputDegrees."&data_talls=".$inputTalls."&data_distance=".$inputDistance."");
+        header("Location: ../checkout_sample/index.php?display_forms=d-none&display_print=d-block&&firstName=".$objFetchDataForms->getFirstName()."&secondName=".$objFetchDataForms->getSecondName()."&UserName=".$objFetchDataForms->getUserName()."&PhoneNumber=".$objFetchDataForms->getPhoneNumber()."&emailUser=".$objFetchDataForms->getEmailUser()."&passwordUser=".$objFetchDataForms->getPasswordUser()."&addressUser=".$objFetchDataForms->getAddressUser()."&rekeningInputChoice=".$objFetchDataForms->getRekeningInputChoice()."&rekeningUser=".$objFetchDataForms->getRekeningUser()."&inputGoodsChoice=".$objFetchDataForms->getInputGoodsChoice()."&kurirInputChoice=".$objFetchDataForms->getKurirInputChoice()."&extraInputChoice=".$objFetchDataForms->getExtraInputChoice()."
+        ");
         
     }
 ?>

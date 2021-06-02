@@ -25,7 +25,7 @@
             
             <div class="container-fluid mt-5">
                 <form action="../config/index.php" method="POST" enctype="multipart/form-data">
-                    <div class="row mb-5">
+                    <div class="row mb-5 <?php if(isset($_GET['display_forms'])) {echo $_GET['display_forms'];}else {echo "mt-5";}?>">
                         <div class="col-lg-6 text-left">
                             <h3 class="font-weight-light" id="headerTemp">Halaman CheckOut</h3>
                             <label class="text-secondary" for="headerTemp">Isi semua input dengan benar.</label> <a href="./" class="btn btn btn-primary rounded shadow">Refresh Data</a> <a href="../" class="btn btn btn-info rounded shadow">Halaman Utama</a>
@@ -36,14 +36,14 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="FirstName">Nama Depan</label>
-                                        <input name="firstName" type="text" placeholder="Nama Depan" class="form-control shadow" id="FirstName" aria-describedby="FirstNameHelp" required="required" value="<?php if(isset($_GET['firstName'])) {echo $_GET['firstName'];}else {}?>">
+                                        <input name="firstName" type="text" placeholder="Nama Depan" class="form-control shadow" id="FirstName" aria-describedby="FirstNameHelp" required="required" value="">
                                         <small id="FirstNameHelp" class="form-text text-muted">Your first name will publicly generated.</small>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="SecondName">Nama Belakang</label>
-                                        <input name="secondName" type="text" placeholder="Nama Belakang" class="form-control shadow" id="SecondName" aria-describedby="SecondNameHelp" required="required" value="<?php if(isset($_GET['secondName'])) {echo $_GET['secondName'];}else {}?>">
+                                        <input name="secondName" type="text" placeholder="Nama Belakang" class="form-control shadow" id="SecondName" aria-describedby="SecondNameHelp" required="required" value="">
                                         <small id="SecondNameHelp" class="form-text text-muted">Your second name will publicly generated.</small>
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text shadow" id="username-addon-1">@</span>
                                             </div>
-                                            <input type="text" class="form-control shadow" placeholder="Username" aria-label="username" aria-describedby="username-addon-1" name="userName" required="required" value="<?php if(isset($_GET['userName'])) {echo $_GET['userName'];}else {}?>">
+                                            <input type="text" class="form-control shadow" placeholder="Username" aria-label="username" aria-describedby="username-addon-1" name="userName" required="required" value="">
                                         </div>
                                         <small id="username-addon-1" class="form-text text-muted">Your username will publicly generated.</small>
                                     </div>
@@ -68,7 +68,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text shadow" id="phone-addon-1">+62</span>
                                             </div>
-                                            <input type="number" class="form-control shadow" placeholder="Nomor HP" aria-label="phone" aria-describedby="phone-addon-1" name="phoneNumber" required="required" value="<?php if(isset($_GET['phoneNumber'])) {echo $_GET['phoneNumber'];}else {}?>">
+                                            <input type="number" class="form-control shadow" placeholder="Nomor HP" aria-label="phone" aria-describedby="phone-addon-1" name="phoneNumber" required="required" value="">
                                         </div>
                                         <small id="phone-addon-1" class="form-text text-muted">Your phone will publicly generated.</small>
                                     </div>
@@ -76,17 +76,17 @@
                             </div>       
                             <div class="form-group">
                                 <label for="email">Email address</label>
-                                <input placeholder="Email" name="emailUser" type="email" class="form-control shadow" id="email" aria-describedby="emailHelp" required="required" value="<?php if(isset($_GET['emailUser'])) {echo $_GET['emailUser'];}else {}?>">
+                                <input placeholder="Email" name="emailUser" type="email" class="form-control shadow" id="email" aria-describedby="emailHelp" required="required" value="">
                                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group">
                                 <label for="passWord">Password</label>
-                                <input placeholder="Password" name="passwordUser" type="password" class="form-control shadow" id="passWord" aria-describedby="passwordHelp" required="required" value="<?php if(isset($_GET['passwordUser'])) {echo $_GET['passwordUser'];}else {}?>">
+                                <input placeholder="Password" name="passwordUser" type="password" class="form-control shadow" id="passWord" aria-describedby="passwordHelp" required="required" value="">
                                 <small id="passwordHelp" class="form-text text-muted">Use the strong words for passwords.</small>
                             </div>
                             <div class="form-group">
                                 <label for="address">Address</label>
-                                <textarea placeholder="Alamat Rumah" name="addressUser" type="textarea" class="form-control shadow" id="address" aria-describedby="addressHelp" required="required" value="<?php if(isset($_GET['addressUser'])) {echo $_GET['addressUser'];}else {}?>"></textarea>
+                                <textarea placeholder="Alamat Rumah" name="addressUser" type="textarea" class="form-control shadow" id="address" aria-describedby="addressHelp" required="required" value=""></textarea>
                                 <small id="addressHelp" class="form-text text-muted">We'll never share your address with anyone else.</small>
                             </div>
                             
@@ -99,25 +99,25 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="rekening1" name="rekeningInputChoice" required="required" value="" <?php if(isset($_GET['data_surface_cone'])) {echo $_GET['data_surface_cone'];}else {}?>>
+                                            <input type="radio" class="custom-control-input" id="rekening1" name="rekeningInputChoice" required="required" value="BCA">
                                             <label class="custom-control-label" for="rekening1">BCA</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="rekening2" name="rekeningInputChoice" value="" <?php if(isset($_GET['data_surface_cone'])) {echo $_GET['data_surface_cone'];}else {}?>>
+                                            <input type="radio" class="custom-control-input" id="rekening2" name="rekeningInputChoice" value="BRI">
                                             <label class="custom-control-label" for="rekening2">BRI</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="rekening3" name="rekeningInputChoice" value="" <?php if(isset($_GET['data_surface_cone'])) {echo $_GET['data_surface_cone'];}else {}?>>
+                                            <input type="radio" class="custom-control-input" id="rekening3" name="rekeningInputChoice" value="BNI">
                                             <label class="custom-control-label" for="rekening3">BNI</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="rekening4" name="rekeningInputChoice" value="" <?php if(isset($_GET['data_surface_cone'])) {echo $_GET['data_surface_cone'];}else {}?>>
+                                            <input type="radio" class="custom-control-input" id="rekening4" name="rekeningInputChoice" value="BANK JATIM">
                                             <label class="custom-control-label" for="rekening4">BANK JATIM</label>
                                         </div>
                                     </div>
@@ -125,7 +125,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="rekening">Nomor Rekening</label>
-                                <input placeholder="Rekening" name="rekeningUser" type="rekening" class="form-control shadow" id="rekening" aria-describedby="rekeningHelp" required="required" value="<?php if(isset($_GET['data_surface_cone'])) {echo $_GET['data_surface_cone'];}else {}?>">
+                                <input placeholder="Rekening" name="rekeningUser" type="rekening" class="form-control shadow" id="rekening" aria-describedby="rekeningHelp" required="required" value="">
                                 <small id="rekeningHelp" class="form-text text-muted">We'll never share your rekening with anyone else.</small>
                             </div> 
                             
@@ -134,8 +134,26 @@
                             <h3 class="font-weight-light" id="headerTemp">Daftar Belanja</h3>
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox mt-1">
-                                    <input type="checkbox" class="custom-control-input" id="inputGoodsChoice1" name="inputGoodsChoice">
+                                    <input type="checkbox" class="custom-control-input" id="inputGoodsChoice1" name="inputGoodsChoice[]" value="ZOTAC RTX 3060 Twin Edge OC">
                                     <label class="custom-control-label" for="inputGoodsChoice1"><img src="../assets/images/zt-a30600h-10m-image01_0.jpg" class="w-25 rounded shadow-sm"> ZOTAC RTX 3060 Twin Edge OC</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox mt-1">
+                                    <input type="checkbox" class="custom-control-input" id="inputGoodsChoice2" name="inputGoodsChoice[]" value="ZOTAC RTX 2060 Twin Edge OC">
+                                    <label class="custom-control-label" for="inputGoodsChoice2"><img src="../assets/images/zt-a30600h-10m-image01_0.jpg" class="w-25 rounded shadow-sm"> ZOTAC RTX 2060 Twin Edge OC</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox mt-1">
+                                    <input type="checkbox" class="custom-control-input" id="inputGoodsChoice3" name="inputGoodsChoice[]" value="ZOTAC RTX 1660 Ti Twin Edge OC">
+                                    <label class="custom-control-label" for="inputGoodsChoice3"><img src="../assets/images/zt-a30600h-10m-image01_0.jpg" class="w-25 rounded shadow-sm"> ZOTAC RTX 1660 Ti Twin Edge OC</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox mt-1">
+                                    <input type="checkbox" class="custom-control-input" id="inputGoodsChoice4" name="inputGoodsChoice[]" value="ZOTAC RTX 1650 Super Twin Edge OC">
+                                    <label class="custom-control-label" for="inputGoodsChoice4"><img src="../assets/images/zt-a30600h-10m-image01_0.jpg" class="w-25 rounded shadow-sm"> ZOTAC RTX 1650 Super Twin Edge OC</label>
                                 </div>
                             </div>
                             
@@ -146,25 +164,25 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input" id="kurirInputChoice1" name="kurirInputChoice" value="<?php if(isset($_GET['data_surface_cone'])) {echo $_GET['data_surface_cone'];}else {}?>" required="required">
+                                            <input type="radio" class="custom-control-input" id="kurirInputChoice1" name="kurirInputChoice" value="JNE" required="required" >
                                             <label class="custom-control-label" for="kurirInputChoice1">JNE</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input" id="kurirInputChoice2" name="kurirInputChoice" value="<?php if(isset($_GET['data_surface_cone'])) {echo $_GET['data_surface_cone'];}else {}?>">
+                                            <input type="radio" class="custom-control-input" id="kurirInputChoice2" name="kurirInputChoice" value="JNT">
                                             <label class="custom-control-label" for="kurirInputChoice2">JNT</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input" id="kurirInputChoice3" name="kurirInputChoice" value="<?php if(isset($_GET['data_surface_cone'])) {echo $_GET['data_surface_cone'];}else {}?>">
+                                            <input type="radio" class="custom-control-input" id="kurirInputChoice3" name="kurirInputChoice" value="AnterAja">
                                             <label class="custom-control-label" for="kurirInputChoice3">AnterAja</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input" id="kurirInputChoice4" name="kurirInputChoice" value="<?php if(isset($_GET['data_surface_cone'])) {echo $_GET['data_surface_cone'];}else {}?>">
+                                            <input type="radio" class="custom-control-input" id="kurirInputChoice4" name="kurirInputChoice" value="POS">
                                             <label class="custom-control-label" for="kurirInputChoice4">POS</label>
                                         </div>
                                     </div>
@@ -172,19 +190,19 @@
                             </div>
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox mt-1">
-                                    <input type="checkbox" class="custom-control-input" id="extraInputChoice1" name="extraInputChoice" value="Wajib Asuransi" required="required">
+                                    <input type="checkbox" class="custom-control-input" id="extraInputChoice1" name="extraInputChoice[]" value="Wajib Asuransi">
                                     <label class="custom-control-label" for="extraInputChoice1">Wajib Asuransi</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox mt-1">
-                                    <input type="checkbox" class="custom-control-input" id="extraInputChoice2" name="extraInputChoice" value="Extra Bubble Warp">
+                                    <input type="checkbox" class="custom-control-input" id="extraInputChoice2" name="extraInputChoice[]" value="Extra Bubble Warp">
                                     <label class="custom-control-label" for="extraInputChoice2">Extra Bubble Warp</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox mt-1">
-                                    <input type="checkbox" class="custom-control-input" id="extraInputChoice3" name="extraInputChoice" value="Extra Packing Kayu">
+                                    <input type="checkbox" class="custom-control-input" id="extraInputChoice3" name="extraInputChoice[]" value="Extra Packing Kayu">
                                     <label class="custom-control-label" for="extraInputChoice3">Extra Packing Kayu</label>
                                 </div>
                             </div>
@@ -251,6 +269,51 @@
                         </div>
                     </div>
                 </form>
+                
+                <div class="row vh-100 justify-content-center <?php if( isset($_GET['display_print'])){  }else {echo "d-none";}?>">
+                    <div class="col-lg-6 align-self-center text-left">
+                        <h3 class="font-weight-light" id="headerTemp">Hasil CheckOut & Print</h3>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Nama Lengkap</th>
+                                    <td><?php if(isset($_GET['firstName'])){ echo $_GET['firstName'], " ", $_GET['secondName'];} else {echo "Belum ada Data";}?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Alamat</th>
+                                    <td><?php if( isset($_GET['addressUser'])){ echo $_GET['addressUser'];}else {echo "Belum ada Data";}?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Produk</th>
+                                    <td><?php if( isset($_GET['inputGoodsChoice'])){ echo $_GET['inputGoodsChoice'];}else {echo "Belum ada Data";}?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Kurir</th>
+                                    <td><?php if( isset($_GET['kurirInputChoice'])){ echo $_GET['kurirInputChoice'];}else {echo "Belum ada Data";}?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Extra Layanan</th>
+                                    <td><?php if( isset($_GET['extraInputChoice'])){ echo $_GET['extraInputChoice'];}else {echo "Belum ada Data";}?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Total Harga</th>
+                                    <td>Rp. 15.000.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <a href="" class="disabled btn btn-primary shadow rounded d-block">CETAK CHECKOUT</a>   
+                        <br>
+                        <div class="row mb-5">
+                            <div class="col">
+                                <a href="./index.php?" class="btn btn-lg btn-primary shadow rounded d-block btn-block">KEMBALI CHECKOUT</a>
+                            </div>
+                            <div class="col">
+                                <a href="../" class="btn btn-lg btn-info shadow rounded d-block btn-block">HOME</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
                     
     
