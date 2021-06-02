@@ -36,14 +36,14 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="FirstName">Nama Depan</label>
-                                        <input name="firstName" type="text" placeholder="Nama Depan" class="form-control shadow" id="FirstName" aria-describedby="FirstNameHelp" required="required" value="">
+                                        <input name="firstName" type="text" placeholder="Nama Depan" class="form-control shadow" id="FirstName" aria-describedby="FirstNameHelp" required="required" value="<?php if(isset($_GET['firstName'])) {echo $_GET['firstName'];}else {}?>">
                                         <small id="FirstNameHelp" class="form-text text-muted">Your first name will publicly generated.</small>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="SecondName">Nama Belakang</label>
-                                        <input name="secondName" type="text" placeholder="Nama Belakang" class="form-control shadow" id="SecondName" aria-describedby="SecondNameHelp" required="required" value="">
+                                        <input name="secondName" type="text" placeholder="Nama Belakang" class="form-control shadow" id="SecondName" aria-describedby="SecondNameHelp" required="required" value="<?php if(isset($_GET['secondName'])) {echo $_GET['secondName'];}else {}?>">
                                         <small id="SecondNameHelp" class="form-text text-muted">Your second name will publicly generated.</small>
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text shadow" id="username-addon-1">@</span>
                                             </div>
-                                            <input type="text" class="form-control shadow" placeholder="Username" aria-label="username" aria-describedby="username-addon-1" name="userName" required="required" value="">
+                                            <input type="text" class="form-control shadow" placeholder="Username" aria-label="username" aria-describedby="username-addon-1" name="userName" required="required" value="<?php if(isset($_GET['userName'])) {echo $_GET['userName'];}else {}?>">
                                         </div>
                                         <small id="username-addon-1" class="form-text text-muted">Your username will publicly generated.</small>
                                     </div>
@@ -68,7 +68,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text shadow" id="phone-addon-1">+62</span>
                                             </div>
-                                            <input type="number" class="form-control shadow" placeholder="Nomor HP" aria-label="phone" aria-describedby="phone-addon-1" name="phoneNumber" required="required" value="">
+                                            <input type="number" class="form-control shadow" placeholder="Nomor HP" aria-label="phone" aria-describedby="phone-addon-1" name="phoneNumber" required="required" value="<?php if(isset($_GET['phoneNumber'])) {echo $_GET['phoneNumber'];}else {}?>">
                                         </div>
                                         <small id="phone-addon-1" class="form-text text-muted">Your phone will publicly generated.</small>
                                     </div>
@@ -76,17 +76,17 @@
                             </div>       
                             <div class="form-group">
                                 <label for="email">Email address</label>
-                                <input placeholder="Email" name="emailUser" type="email" class="form-control shadow" id="email" aria-describedby="emailHelp" required="required" value="">
+                                <input placeholder="Email" name="emailUser" type="email" class="form-control shadow" id="email" aria-describedby="emailHelp" required="required" value="<?php if(isset($_GET['emailUser'])) {echo $_GET['emailUser'];}else {}?>">
                                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group">
                                 <label for="passWord">Password</label>
-                                <input placeholder="Password" name="passwordUser" type="password" class="form-control shadow" id="passWord" aria-describedby="passwordHelp" required="required" value="">
+                                <input placeholder="Password" name="passwordUser" type="password" class="form-control shadow" id="passWord" aria-describedby="passwordHelp" required="required" value="<?php if(isset($_GET['passwordUser'])) {echo $_GET['passwordUser'];}else {}?>">
                                 <small id="passwordHelp" class="form-text text-muted">Use the strong words for passwords.</small>
                             </div>
                             <div class="form-group">
                                 <label for="address">Address</label>
-                                <textarea placeholder="Alamat Rumah" name="addressUser" type="textarea" class="form-control shadow" id="address" aria-describedby="addressHelp" required="required" value=""></textarea>
+                                <textarea placeholder="Alamat Rumah" name="addressUser" type="textarea" class="form-control shadow" id="address" aria-describedby="addressHelp" required="required" value="<?php if(isset($_GET['addressUser'])) {echo $_GET['addressUser'];}else {}?>"></textarea>
                                 <small id="addressHelp" class="form-text text-muted">We'll never share your address with anyone else.</small>
                             </div>
                             
@@ -125,7 +125,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="rekening">Nomor Rekening</label>
-                                <input placeholder="Rekening" name="rekeningUser" type="rekening" class="form-control shadow" id="rekening" aria-describedby="rekeningHelp" required="required" value="">
+                                <input placeholder="Rekening" name="rekeningUser" type="number" class="form-control shadow" id="rekening" aria-describedby="rekeningHelp" required="required" value="<?php if(isset($_GET['rekeningUser'])) {echo $_GET['rekeningUser'];}else {}?>">
                                 <small id="rekeningHelp" class="form-text text-muted">We'll never share your rekening with anyone else.</small>
                             </div> 
                             
@@ -284,6 +284,14 @@
                                     <td><?php if( isset($_GET['addressUser'])){ echo $_GET['addressUser'];}else {echo "Belum ada Data";}?></td>
                                 </tr>
                                 <tr>
+                                    <th scope="row">Nomor HP</th>
+                                    <td><?php if( isset($_GET['phoneNumber'])){ echo $_GET['phoneNumber'];}else {echo "Belum ada Data";}?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Email</th>
+                                    <td><?php if( isset($_GET['emailUser'])){ echo $_GET['emailUser'];}else {echo "Belum ada Data";}?></td>
+                                </tr>
+                                <tr>
                                     <th scope="row">Produk</th>
                                     <td><?php if( isset($_GET['inputGoodsChoice'])){ echo $_GET['inputGoodsChoice'];}else {echo "Belum ada Data";}?></td>
                                 </tr>
@@ -297,19 +305,23 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Total Harga</th>
-                                    <td>Rp. 15.000.00</td>
+                                    <td>Rp. 15.000.000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Pembayaran</th>
+                                    <td><?php if( isset($_GET['rekeningInputChoice'])){ echo $_GET['rekeningInputChoice']." via Transfer";}else {echo "Belum ada Data";}?></td>
                                 </tr>
                             </tbody>
                         </table>
                         <br>
-                        <a href="" class="disabled btn btn-primary shadow rounded d-block">CETAK CHECKOUT</a>   
+                        <a onclick="window.print();return false;" class="btn btn-primary shadow rounded d-block d-print-none">CETAK CHECKOUT</a>   
                         <br>
                         <div class="row mb-5">
                             <div class="col">
-                                <a href="./index.php?" class="btn btn-lg btn-primary shadow rounded d-block btn-block">KEMBALI CHECKOUT</a>
+                                <a href="" class="disabled btn btn-lg btn-primary shadow rounded d-block btn-block d-print-none">KEMBALI CHECKOUT</a>
                             </div>
                             <div class="col">
-                                <a href="../" class="btn btn-lg btn-info shadow rounded d-block btn-block">HOME</a>
+                                <a href="../" class="btn btn-lg btn-info shadow rounded d-block btn-block d-print-none">HOME</a>
                             </div>
                         </div>
                     </div>
